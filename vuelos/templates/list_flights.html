@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listar vuelos</title>
+    <style>
+        .nacional {
+            color: blue;
+        }
+        .internacional {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Listar vuelos</h1>
+    <ul>
+        {% for flight in flights %}
+            <li>
+                {{ flight.id }} - {{ flight.name }}
+                {% if flight.flight_type == 'Nacional' %}
+                    <span class="nacional">{{ flight.price }}</span>
+                {% else %}
+                    <span class="internacional">{{ flight.name }}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</
